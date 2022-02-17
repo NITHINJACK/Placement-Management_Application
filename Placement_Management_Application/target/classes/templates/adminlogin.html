@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <title> Admin </title>
+
+   <link rel="stylesheet" href="css/style.css"> 
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("img/placement.png");
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+.multi{
+        text-shadow: 0 0 .5em lime;
+        padding-top: 35px;
+        font-size:60px;
+        text-align:center;
+      }
+</style>
+</head>
+    <body>
+    <div class="multi"> 
+              Placement Management System
+                </div> 
+    
+    <div class="login-box">
+    <img src="img\avatar.png" class="avatar">
+        <h1>Admin</h1>
+            <form th:action="@{/adminlogin}" method="post">
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+                
+            </form>
+        
+        
+        </div>
+    
+    </body>
+</html>

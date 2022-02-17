@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin</title>
+<style>
+h1{
+    padding-left: 500px;
+    font-size: 50px;
+    color: firebrick;
+}
+b{
+    padding-left: 150px;
+}
+#btn{
+    margin-left: 150px;
+}
+.login-box input[type="submit"]
+{
+    border: 1px solid black;
+    outline: none;
+    height: 33px;
+    background: green;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.login-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: blue;
+    color: white;
+}
+
+</style>
+
+</head>
+<body style=" background-image: url(img/index.jpg)">
+<div class=style1>
+	
+
+   <h1>Welcome &#128522 !!!</h1><br>
+   <h2><B style="color:indigo; font-size: 30px;" > PLACEMENT MANAGEMENT </b></h1><BR>
+    <div class="login-box">
+   <b style="color:deeppink;font-size: 20px;">PLACEMENT DETAILS</b> &nbsp;&nbsp;&nbsp;<a th:href="@{'/placementindex'}"><input type="submit" class="btn btn-info" value="Open" /></a><br><br><br>
+   <b style="color:deeppink;font-size: 20px;">COLLEGE DETAILS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{'/collegeindex'}"><input type="submit" class="btn btn-info" value="Open" /></a><br><br><br>
+   <b style="color:deeppink;font-size: 20px;">STUDENT DETAILS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{'/studentindex'}"><input type="submit" class="btn btn-info" value="Open" /></a><br><br><br>
+
+   <form th:action="@{/logout}" method="post">
+      
+        <input id="btn" type="submit"  value="Logout" />
+    </div>
+    </form>
+    </div>
+</body>
+</html>

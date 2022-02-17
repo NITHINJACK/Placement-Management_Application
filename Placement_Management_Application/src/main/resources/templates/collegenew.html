@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+<style type="text/css">
+#bg{
+filter: blur(5px);
+}
+
+body {
+margin:0;
+padding:0;
+  background-image: url(img/hdclg1.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+input[type=text], input[type=password] {
+   width: 30%;
+   font-size: 28px;
+   padding: 10px;
+   margin: 0px 0px 0px 0px; 
+   display: inline-block;
+   border: black 2px solid;
+    border-radius: 10px;
+   background-color:lightskyblue;
+}
+label{
+   font-size: 25px;
+   font-weight: bold;
+   color: darksalmon;
+}
+
+button {
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgb(10, 119, 13);
+   color: white;
+   padding: 14px 20px;
+   margin: 2px 50px;
+   border: 1px solid black;
+   cursor: pointer;
+   width: 8%;
+   border-radius: 30px;
+   opacity: 0.9;
+}
+button:hover {
+   opacity:1;
+}
+.formContainer {
+   padding: 1px;
+}
+.formContainer p{
+   font-size:50px;
+}
+nav,a{
+            word-spacing: 15px;
+            text-align: left;
+            padding-left: 70px;
+            color: deepskyblue;
+            font-size: 30px;
+            font-weight: 200;
+           text-decoration: none;
+        }
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div align="center">
+<div>
+    <h1 style="font-size: 45px; font-family: cursive; color: darkorange;">Create New College Data</h1>
+ 
+   <tr>
+			<nav>	   
+		     <a  th:href="@{'/collegeindex'}"><b>CollegeData</b></a>   
+	    </nav>
+	
+	</tr>
+   </div>
+     <div class="col-sm-4">
+    <form action="#" th:action="@{/savecollege}" th:object="${college}" method="post">
+ 
+      
+ 		<div class="formContainer" alight="left">
+            <tr >
+                <label class="form-label" >College Name</label><br>
+                <td>
+	                <input type="hidden" th:field="*{id}" />
+	                <input type="text" th:field="*{collegename}" class="form-control" placeholder="collegename" />
+                </td>
+            </tr>
+         </div>   
+            
+          	<div class="formContainer" alight="left">
+          
+            <tr>
+                 <label class="form-label" >Location</label><br>
+                <td><input type="text" th:field="*{collegelocation}" class="form-control" placeholder="collegelocation" /></td>
+            </tr>
+            </div> 
+            <div class="formContainer" alight="left">
+                 <tr>
+                 <label class="form-label" >Admin</label><br>
+                <td><input type="text" th:field="*{collegeadmin}" class="form-control" placeholder="collegeadmin" /></td>
+            </tr>
+            </div> 
+            
+             <div class="formContainer" alight="left">
+                 <tr>
+                 <label class="form-label" >Email</label><br>
+                <td><input type="text" th:field="*{collegeemail}" class="form-control" placeholder="collegeemail" /></td>
+            </tr>
+            </div>
+			<br>
+            <tr>
+            <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

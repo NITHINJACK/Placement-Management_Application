@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+	<style type="text/css">
+#bg{
+filter: blur(5px);
+}
+
+body {
+margin:0;
+padding:0;
+  background-image: url(img/p1.png);
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+input[type=text], input[type=password] {
+   width: 30%;
+   font-size: 28px;
+   padding: 10px;
+   margin: 0px 0px 0px 0px; 
+   display: inline-block;
+   border: black 2px solid;
+    border-radius: 10px;
+   background-color:lightskyblue;
+}
+label{
+   font-size: 25px;
+   font-weight: bold;
+   color: darkmagenta;
+}
+
+button {
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgb(10, 119, 13);
+   color: white;
+   padding: 14px 20px;
+   margin: 2px 50px;
+   border: 1px solid black;
+   cursor: pointer;
+   width: 8%;
+   border-radius: 30px;
+   opacity: 0.9;
+}
+button:hover {
+   opacity:1;
+}
+.formContainer {
+   padding: 1px;
+}
+.formContainer p{
+   font-size:50px;
+}
+nav,a{
+            word-spacing: 15px;
+            text-align: left;
+            padding-left: 70px;
+            color: deepskyblue;
+            font-size: 30px;
+            font-weight: 200;
+           text-decoration: none;
+        }
+</style>
+</head>
+<body>
+<div align="center">
+    <div>
+    <h1 style="font-size: 45px; font-family: cursive; color: firebrick;">Create New Placement Data</h1>
+   <tr>
+		<div align = "left" >		   
+		     <h3><a  th:href="@{'/placementindex'}">PlacementData</a></h3>     
+	    </div>
+	
+	</tr>
+   </div>
+    
+     <div class="col-sm-4" >
+    <form action="#" th:action="@{/save}" th:object="${placement}" method="post">
+ 
+      
+ 		<div alight="left">
+            <tr>
+                <label class="form-label" >Name</label><br>
+                <td>
+	                <input type="hidden" th:field="*{id}" />
+	                <input type="text" th:field="*{name}" class="form-control" placeholder="Name" />
+                </td>
+            </tr>
+         </div>   
+            
+          	<div alight="left">
+          
+            <tr>
+                 <label class="form-label" >College</label><br>
+                <td><input type="text" th:field="*{college}" class="form-control" placeholder="College" /></td>
+            </tr>
+            </div> 
+            <div alight="left">
+                 <tr>
+                 <label class="form-label" >Date</label><br>
+                <td><input type="text" th:field="*{date}" class="form-control" placeholder="Date" /></td>
+            </tr>
+            </div>  
+            
+            <div alight="left">
+                 <tr>
+                 <label class="form-label" >Qualification</label><br>
+                <td><input type="text" th:field="*{qualification}" class="form-control" placeholder="Qualification" /></td>
+            </tr>
+            </div> 
+            
+            <div alight="left">
+                 <tr>
+                 <label class="form-label" >Year</label><br>
+                <td><input type="text" th:field="*{year}" class="form-control" placeholder="Year" /></td>
+            </tr>
+            </div> 
+            
+            
+            
+            
+			<br>
+            <tr>
+            <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
